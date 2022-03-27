@@ -1,0 +1,79 @@
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
+        <mat-card>
+        <div class="col-md-12 ">
+            <app-sidebarpatient></app-sidebarpatient>
+        </div>
+        </mat-card>
+    </mat-grid-tile>
+<mat-grid-tile>
+<div class="col-md-12">
+    <mat-card>
+    <h3>Patient Appointment Page:</h3>
+    <form (ngSubmit)="onSubmit()" name="myform">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" id="name"
+            [(ngModel)]="patient.name" name="name" required>
+        </div>
+    
+        <br/>
+        <label>Gender:</label><br/>
+        <div *ngFor="let gender of genders">
+        <label>
+            <input type="radio"  name="gender" value="{{gender}}"  (change)="radioChangeHandler($event)">{{gender}}</label><br/>
+        </div><br/>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" class="form-control" id="phonenumber"
+            [(ngModel)]="patient.phonenumber" name="phonenumber" required>
+        </div><br/>
+
+        <label>Docters:</label><br/>
+        <select (change)="selectChangeHandler ($event)">
+            <option>Anesthesiologists</option>
+            <option>Cardiologists</option>
+            <option>Dermatologists</option>
+            <option>Endocrinologists</option>
+            <option>Internists</option>
+            <option>Neurologists</option>
+            <option>Ophthalmologists</option>
+            <option>Gynacologist</option>
+            <option>ENT</option>
+            <option>Dentist</option>
+            <option>Surgeon</option>
+        </select><br/>
+
+        <div class="form-group"><br/>
+            
+                <label for="exampleInputMobile" class="form-label" >Appointment Date:</label>
+                <input  type='date' class="form-control" [(ngModel)]="patient.dateofvist" name="dateofvist"/>
+              
+          </div><br/>
+    
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" class="form-control" id="age"
+            [(ngModel)]="patient.age" name="age">
+        </div><br/>
+
+        <div class="form-group">
+            <label>DocterName</label>
+            <input type="text" class="form-control" id="visiteddocter"
+            [(ngModel)]="patient.visiteddocter" name="visiteddocter" required>
+        </div>
+    
+        <br/>
+        <button class="btn btn-success seprator" type="Submit" >Submit</button>
+        <button class="btn btn-success  seprator" type="reset" >Clear</button>
+    </form>
+</mat-card>
+</div>
+    </mat-grid-tile>
+
+
+
+
+    
+

@@ -1,0 +1,19 @@
+<mat-action-list>
+    <h2>Docter List</h2>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Specilization</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of docternamelist">
+                <td>{{d.firstName}} </td>
+                <td>{{d.specialization}}</td>
+                <button  mat-button style="margin-left: 10px">Details</button><br/>
+        </tbody>
+        </table>
+</mat-action-list>
+
